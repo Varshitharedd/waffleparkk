@@ -1,0 +1,48 @@
+extends layout
+
+block content
+ .row
+  .col-xs-12.col-md-6
+    section.hero
+      
+      h1 Welcome to Wafflepark
+      p A unique culinary experience in a cozy ambiance.
+      img.hero-image(src="/images/wafflepark.jpeg", alt="Ambience",style="width:100%;height:auto;")
+    section.special-features
+      .promotion
+        h2 Special Promotions
+        p Limited-time offers and happy hour deals.
+      .events
+        h2 Upcoming Events
+        p Live music nights and themed evenings.
+    section.about-us
+      h2 About Us
+      p We are a cafe dedicated to serving the finest waffle with a focus on quality and freshness.
+      a.learn-more(href="/aboutus") Learn More
+    section.featured-dishes
+      h2 Featured waffles
+      .dish
+        img(src="images/darkchocolate.jpeg", alt="Featured waffle 1", style="width:50%;height:auto;")
+        h3 Dark chocolate
+        p A flavorful and aromatic dark chocolate waffle in its original style.
+        img(src="images/whitechocolate.jpeg", alt="Featured waffle 2", style="width:50%;height:auto")
+        h3 White chocolate
+        p  A beloved white and milk chocolate waffle in its signature style.
+    section.testimonials
+      h2 What Our Customers Say
+      .testimonial
+        blockquote
+          p "Delicious waffles and excellent service! This is my favorite wafflestore."
+        p -varshitha
+    section.reservation-cta
+      h2 Reserve a Table
+      p Book a table now to experience our culinary delights firsthand.
+      a.btn-reserve(href="/reservation") Reserve Now
+    section.contact
+      h2 Get in Touch
+      p For reservations or inquiries, feel free to contact us.
+      p Phone: +91 9963591908
+      p Email: wafflepark@cafe.com
+      a.btn-contact(href="/contact") Contact Us
+    footer
+      p &copy; Wafflepark. All rights reserved.
