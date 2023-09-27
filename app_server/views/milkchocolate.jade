@@ -3,26 +3,28 @@ extends layout
 block content
   .row.page-header
     .col-lg-12
-      h1 Milkchocolate
+      h1 milkchocolate
+
   .row
     .col-xs-12.col-md-9
       .row
-        .col-xs-12.col-sm-6
-          
-          .panel.panel-primary
-            .panel-heading
-              h2.panel-title Milk chocolate
-               span.badge.pull-right.badge-default Rs.300
-            .panel-body
-              img(src="images/milkchocolate.jpeg", alt="milkchocolate", style="width: 20%; height: auto;")
-              p Signature milk chocolate waffle.Original style!
-          .panel.panel-primary
-            .panel-heading
-              h2.panel-title raspberry waffle
-               span.badge.pull-right.badge-default Rs.400
-            .panel-body
-              img(src="images/raspberry.jpeg", alt="raspberry", style="width: 20%; height: auto;")
-              p Signature raspberry chocolate waffle.Original style!
-        .col-xs-12.col-sm-4
-           p.lead
-             | Embark on a savory adventure with our milk chocolate at Wafflepark, where white chocolate flavous offers a tantal promise an unforgettable dining experience.  
+        each course in Course
+          .col-xs-12.col-sm-6.menu-item
+            .panel.panel-primary
+              .panel-heading
+                h2.panel-title= course.name
+                span.badge.pull-right.badge-default Rs.#{course.price}
+              .panel-body
+                img.menu-item-image(src=course.image, alt=course.name)
+                p.menu-item-description= course.description
+                p.rating
+                   - var rating = course.rating;
+              each star in [1, 2, 3, 4, 5]
+                if star <= rating
+                  span.glyphicon.glyphicon-star
+                else
+                  span.glyphicon.glyphicon-star-empty
+                  
+    .col-xs-12.col-sm-3
+      p.lead
+        | Embark on a savory adventure with our milk chocolate at Wafflepark, where milk chocolate flavours offers a tantal promise an unforgettable dining experience.
