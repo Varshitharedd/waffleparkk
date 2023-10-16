@@ -7,9 +7,9 @@ var ctrlcontact = require('../controllers/contact');
 /* GET menu page. */
 router.get('/',ctrlmenu.home);
 router.get('/menu',ctrlmenu.menu);
-router.get('/darkchocolate',ctrlmenu.darkchocolate);
-router.get('/whitechocolate',ctrlmenu.whitechocolate);
-router.get('/milkchocolate',ctrlmenu.milkchocolate);
+router.get('/earphones',ctrlmenu.earphones);
+router.get('/dress',ctrlmenu.dress);
+router.get('/shoe',ctrlmenu.shoe);
 /* get contact page */
 router.get('/aboutus',ctrlcontact.aboutus);
 router.get('/contact', ctrlcontact.contact);

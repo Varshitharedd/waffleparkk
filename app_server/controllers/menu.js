@@ -6,72 +6,72 @@ module.exports.home = function(req, res){
     res.render('menu', { title: 'menu' });
   };
 
-  module.exports.darkchocolate = function(req, res){
-    res.render('darkchocolate', { title: 'darkchocolate' ,Course: [
+  module.exports.earphones = function(req, res){
+    res.render('earphones', { title: 'earphones' ,Course: [
       {
-        name: "Dark chocolate Icecream",
-        price: 300,
-        description: "Signature dark chocolate waffle with melted belgian chocolate.",
+        name: "Boat",
+        price: 1300,
+        description: "Base music",
         rating: 4,
-        image:"images/darkchocolate.jpeg" 
+        image:"images/earphones.jpeg" 
       },
       {
-        name: "Tripple chocolate",
-        price: 400,
-        description: "Three layers of melted white,belgian white and belgian dark chocolate",
+        name: "Noise",
+        price: 1400,
+        description: "Loud and clear music",
         rating: 5,
-        image: "images/tripplechocolate.jpeg"
+        image: "images/earphones.jpeg"
       },
       {
-        name: "Dark chocolate overload",
-        price: 400,
-        description: "A delightful dark chocolate overload.Double the chocolate.",
+        name: "Sony",
+        price: 1400,
+        description: "Loud and beautiful music",
         rating: 4,
-        image: "images/darkchocolate-overload.jpeg"
+        image: "images/earphones.jpeg"
       },
       {
-        name: "Death by chocolate",
+        name: "Redme",
         price: 400,
-        description: "Signature Dark chocolate waffle layed with different chocolates.",
-        image: "images/deathbychocolate.jpeg"
+        description: "Music headphones",
+        image: "image/earphones.jpeg"
       }
     ]});
   };
 
-  module.exports.whitechocolate = function(req, res){
-    res.render('whitechocolate', { title: 'whitechocolate',Course: [
+  module.exports.dress = function(req, res){
+    res.render('dress', { title: 'dress',Course: [
       {
-        name: "red velvet",
-        price: 300,
-        description: "Original velvet with cheese and cream.A true original!",
+        name: "frocks",
+        price: 1300,
+        description: "Cotton and poluster",
         rating: 4,
-        image:"images/redvelvet.jpeg" 
+        image:"images/dress.jpeg" 
       },
       {
-        name: "tripple cookie",
+        name: "Jeans",
         price: 400,
-        description: "Original red velvet with biscoff cookie.",
+        description: "jeans high waist",
         rating: 5,
-        image: "images/tripplecookie.jpeg"
+        image: "images/dress.jpeg"
       }
     ]});
   };
 
-  module.exports.milkchocolate= function(req, res){
-    res.render('milkchocolate', { title: 'milkchocolate',Course: [
+  module.exports.shoe= function(req, res){
+    res.render('shoe', { title: 'shoe',Course: [
       {
-        name: "Milk chocolate",
-        price: 300,
-        description: "Signature milk chocolate waffle.Original style!",
+        name: "nike",
+        price: 1300,
+        description: "sneakers white color",
         rating: 4,
-        image:"images/milkchocolate.jpeg" 
+        image:"images/shoe.jpeg" 
       },
       {
-        name: "raspberry waffle",
+        name: "puma",
         price: 400,
-        description: "Signature raspberry chocolate waffle.Original style!",
+        description: "black puma shoes",
         rating: 5,
-        image: "images/raspberry.jpeg"
+        image: "images/shoe.jpeg"
       }
     ]});
   };

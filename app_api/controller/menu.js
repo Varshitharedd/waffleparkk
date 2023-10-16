@@ -17,14 +17,16 @@ module.exports.coursesCreate = function (req, res) {
     image: req.body.image
   });
 
-  newCourse.save(function (err, course) {
-    if (err) {
-      sendJsonResponse(res, 500, { error: 'An error occurred' });
-    } else {
+  newCourse
+    .save()
+    .then(course => {
       sendJsonResponse(res, 201, course);
-    }
-  });
+    })
+    .catch(err => {
+      sendJsonResponse(res, 500, { error: 'An error occurred' });
+    });
 };
+
 
 // Get a list of courses
 module.exports.coursesList = function (req, res) {
@@ -52,7 +54,9 @@ module.exports.coursesReadOne = async function (req, res) {
 };
 
 // Update a course by ID
+
 module.exports.coursesUpdateOne = function (req, res) {
+  // Find and update the course by its ID
   Course.findByIdAndUpdate(
     req.params.courseid,
     {
@@ -61,27 +65,33 @@ module.exports.coursesUpdateOne = function (req, res) {
         price: req.body.price,
         description: req.body.description,
         rating: req.body.rating,
-        image: req.body.image
-      }
+        image: req.body.image,
+      },
     },
-    { new: true },
+    { new: true }, // Returns the updated course
     function (err, course) {
       if (err) {
+        // Handle errors, and send an error response
         sendJsonResponse(res, 500, { error: 'An error occurred' });
+      } else if (!course) {
+        // If the course with the given ID is not found, send a 404 response
+        sendJsonResponse(res, 404, { error: 'Course not found' });
       } else {
+        // Send a success response with the updated course data
         sendJsonResponse(res, 200, course);
       }
     }
   );
 };
-
-// Delete a course by ID
 module.exports.coursesDeleteOne = function (req, res) {
-  Course.findByIdAndRemove(req.params.courseid, function (err, course) {
-    if (err) {
-      sendJsonResponse(res, 500, { error: 'An error occurred' });
-    } else {
+  Course.findByIdAndRemove(req.params.courseid)
+    .exec()
+    .then(() => {
       sendJsonResponse(res, 204, null);
-    }
-  });
+    })
+    .catch((err) => {
+      console.error(err);
+      sendJsonResponse(res, 500, { error: 'An error occurred' });
+    });
 };
+
